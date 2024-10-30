@@ -1,0 +1,42 @@
+package Basis;
+
+public class schaltjahr3 {
+
+	public static void main(String[] args) {
+		int Monat = 3;
+		int jahr = 2000;
+		boolean schaltjahr = false;
+		String schaltjahr_t = "kein";
+		
+		if (jahr%4!=0) {schaltjahr = false;}
+		else if (jahr%100!=0) {schaltjahr = true;}
+		else if (jahr%400!=0) {schaltjahr = false;}
+		else {schaltjahr = true;}
+		
+		if (schaltjahr) {schaltjahr_t = "ein";}
+		else {schaltjahr_t = "kein";}
+		
+		
+		System.out.println("Das Jahr " + jahr + " ist " + schaltjahr_t + " Schaltjahr");
+		
+		
+		
+		
+		switch (Monat) {
+		case 1, 3, 5, 7,8,10,12:
+		{	System.out.println("Der Monat " +Monat+ "hat 31 Tage");
+		break;}
+		case 2:
+		{	if (schaltjahr)
+			System.out.println("Der Monat " +Monat+ "hat 29 Tage");
+		else 
+			System.out.println("Der Monat " +Monat+ "hat 28 Tage");
+		break;}
+		case 4, 6,9,11:
+		{	System.out.println("Der Monat " +Monat+ "hat 30 Tage");
+		break;}
+	}
+
+	}
+
+}
