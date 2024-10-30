@@ -1,0 +1,30 @@
+package Basis;
+import java.util.Scanner;  // Import the Scanner class
+
+public class alter {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+	    Scanner ObjRead = new Scanner(System.in);  			// Create a Scanner object
+	    System.out.println("Eingabe Alter");
+
+	    String age_s = ObjRead.nextLine();  				// Read user input
+	    System.out.println("Alter is: " + age_s);  			// Output user input
+
+		String result = "";
+		int age_r = Integer.valueOf(age_s);
+		
+		System.out.println(age_r);
+		int age = age_r;
+		if (age >= 18) {result = "Du darfst endlich Auto fahren!";}
+		else if (age >= 16) {result = "Du darfst Moped fahren, aber nicht Auto";}
+		else if (age >= 14) {result = "Du darfst Mofa fahren, aber nicht Moped";}
+		else if (age < 14) {result = "Du darfst noch nicht Mofa fahren";}
+		else {result = "fehlerhafte Eingabe";}
+	    System.out.println(result);
+	}
+
+}
+
