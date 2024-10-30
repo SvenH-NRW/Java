@@ -36,31 +36,31 @@ int rest;
 
     change[0] = Betrag_r/change_opt[0];
     rest = Betrag_r-change[0]*change_opt[0];
-    System.out.println("500er: " + change[0]);  		// Output user input
+    System.out.println("500er: " + change[0]);  		// Output 500er
 
     change[1] = rest/change_opt[1];
     rest = rest-change[1]*change_opt[1];
-    System.out.println("200er: " + change[1]);  		// Output user input
+    System.out.println("200er: " + change[1]);  		// Output 200er
 
     change[2] = rest/change_opt[2];
     rest = rest-change[2]*change_opt[2];
-    System.out.println("100er: " + change[2]);  		// Output user input
+    System.out.println("100er: " + change[2]);  		// Output 100er
 
     change[3] = rest/change_opt[3];
     rest = rest-change[3]*change_opt[3];
-    System.out.println(" 50er: " + change[3]);  			// Output user input
+    System.out.println(" 50er: " + change[3]);  		// Output 50er
 
     change[4] = rest/change_opt[4];
     rest = rest-change[4]*change_opt[4];
-    System.out.println(" 20er: " + change[4]);  			// Output user input
+    System.out.println(" 20er: " + change[4]);  		// Output 20er
 
     change[5] = rest/change_opt[5];
     rest = rest-change[5]*change_opt[5];
-    System.out.println(" 10er: " + change[5]);  			// Output user input
+    System.out.println(" 10er: " + change[5]);  		// Output 10er
 
     change[6] = rest/change_opt[6];
     rest = rest-change[6]*change_opt[6];
-    System.out.println("  5er: " + change[6]);  			// Output user input
+    System.out.println("  5er: " + change[6]);  		// Output 5er
 
     System.out.println(" Rest: " + rest);  			// Output user input
 	
