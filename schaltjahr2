@@ -1,0 +1,24 @@
+package Basis;
+
+public class schaltjahr2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int jahr = 2000;
+		boolean schaltjahr = false;
+		String schaltjahr_t = "kein";
+		
+		if (jahr%4!=0) {schaltjahr = false;}
+		else if (jahr%100!=0) {schaltjahr = true;}
+		else if (jahr%400!=0) {schaltjahr = false;}
+		else {schaltjahr = true;}
+		
+		if (schaltjahr == true) {schaltjahr_t = "ein";}
+		else {schaltjahr_t = "kein";}
+		
+		
+		System.out.println("Das Jahr " + jahr + " ist " + schaltjahr_t + " Schaltjahr");
+
+	}
+
+}
