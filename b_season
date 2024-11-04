@@ -1,0 +1,113 @@
+package Basis;
+
+public class Jahreszeit {
+	public static void main(String[] args) {
+
+		/*b) Schreiben Sie eine Klasse die je nach Jahreszeit und Temperatur bestimmt ob es für den Monat warm oder kalt ist.
+
+
+    März April Mai (Frühling  >=20 warm  <20 kalt)
+
+    Juni Juli August (Sommer >= 25 warm <20 kalt)
+
+    September Oktober November (Herbst >=15 warm <15 kalt)
+
+    Dezember Januar Februar (Winter >=5 warm <5 kalt)
+
+
+    Monate als int
+
+    Jahreszeit als String
+
+    Temperatur als double
+
+
+    Ausgabe: Der "monat" ist mit "temperatur"°C für diese "jahreszeit" realtiv "temperaturempfinden" */
+		
+		
+		int month = 1;				// Eingabe Monat als int
+		double temp = 19.7; 		// Eingabe Temperatur in °C
+
+		String season = "";			// Ausgabe Jahreszeit 
+		String rating = "unbekannt / normal";			// Ausgabe warm kalt
+		String month_s = "";		// Ausgabe Monat
+		
+		switch (month) {
+		case 1:
+		{		season = "Winter";
+				month_s = "Januar";
+		break;}
+		case 2:
+		{		season = "Winter";
+				month_s = "Februar";
+		break;}
+		case 12:
+		{		season = "Winter";
+				month_s = "Dezember";
+		break;}
+		case 3:
+		{		season = "Frühling";
+				month_s = "März";
+		break;}
+		case 4:
+		{		season = "Frühling";
+				month_s = "April";
+		break;}
+		case 5:
+		{		season = "Frühling";
+				month_s = "Mai";
+		break;}
+		case 6:
+		{		season = "Sommer";
+				month_s = "Juni";
+		break;}
+		case 7:
+		{		season = "Sommer";
+				month_s = "Juli";
+		break;}
+		case 8:
+		{		season = "Sommer";
+				month_s = "August";
+		break;}
+		case 9:
+		{		season = "Herbst";
+				month_s = "September";
+		break;}
+		case 10:
+		{		season = "Herbst";
+				month_s = "Oktober";
+		break;}
+		case 11:
+		{		season = "Herbst";
+				month_s = "November";
+		break;}
+		}
+
+		switch (season) {
+		case "Frühling":
+		{		if (temp < 20) {rating = "kalt";}
+		else if (temp >= 20) {rating = "warm";}
+		break;}
+		case "Sommer":
+		{		if (temp < 25) {rating = "kalt";}
+		else if (temp >= 25) {rating = "warm";}
+		break;}
+		case "Herbst":
+		{		if (temp < 15) {rating = "kalt";}
+		else if (temp >= 15) {rating = "warm";}
+		break;}
+		case "Winter":
+		{		if (temp < 5) {rating = "kalt";}
+		else if (temp >= 5) {rating = "warm";}
+		break;}
+//	    März April Mai (Frühling  >=20 warm  <20 kalt)
+//	    Juni Juli August (Sommer >= 25 warm <20 kalt)
+//	    September Oktober November (Herbst >=15 warm <15 kalt)
+//	    Dezember Januar Februar (Winter >=5 warm <5 kalt)
+		
+//		Ausgabe: Der "monat" ist mit "temperatur"°C für diese "jahreszeit" realtiv "temperaturempfinden" */
+		}System.out.println("Der " + month_s + " ist mit " + temp + " °C für den " + season + " realtiv " + rating + ".");
+
+
+
+}}
