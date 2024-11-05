@@ -1,0 +1,75 @@
+package Basis;
+
+public class array {
+
+	public static void main(String[] args) {
+		/*
+		a) Erstellen Sie ein array vom Datentyp int, dass die Zahlen von 10 bis 15 enthält
+			aa) In einem Schritt ( int[] = {} )
+			ab) Befüllen per for-Schleife
+    		ac) Geben Sie die Elemente am 1. und 3. Index aus
+		b) Berechnen die Summe der Elemente des Arrays
+		c) Tauschen Sie die Elemente am 2. und 4. Index */
+		
+
+		System.out.println("Teil aa definieren beim deklarieren");
+		int[] myNum = {10, 11, 12, 13, 14, 15};
+		for (int i=0;i<=myNum.length-1;i++)
+		{
+			System.out.print(myNum[i] + " ");	
+		}
+		
+		
+		System.out.println();
+		System.out.println("Teil ab definieren per for-Schleife");
+		
+		for (int i=0;i<=myNum.length-1;i++)
+		{
+			myNum[i]= i+12;
+			System.out.print(myNum[i] + " ");	
+		}
+
+		
+		System.out.println();
+		System.out.println("Teil ac Abfrage Element 1 und 3");
+		
+		System.out.print(myNum[0] + " ");	
+		System.out.print(myNum[2] + " ");	
+
+		
+		
+		System.out.println();
+		System.out.println("Teil b summe aller Elemente");
+		int sum = 0;
+		for (int i=0;i<=myNum.length-1;i++)
+		{
+			sum += myNum[i];
+		}
+		System.out.print(sum);	
+		
+		
+		System.out.println();
+		System.out.println("Teil c Abfrage mit Filter");
+		int limit = 12;
+		for (int i=0;i<=myNum.length-1;i++)
+		{
+			if (myNum[i]>=limit) 
+			{
+				System.out.print(myNum[i] + " ");
+				}	
+		}
+		
+		System.out.println();
+		System.out.println("Teil d Werte tauschen");
+		int temp = 0;
+		temp = myNum[2];	
+		myNum[2] = myNum[4];	
+		myNum[4] = temp;
+		for (int i=0;i<=myNum.length-1;i++)
+		{
+			System.out.print(myNum[i] + " ");	
+		}
+	
+	}
+
+}
