@@ -1,10 +1,6 @@
 package Basis;
-
 public class schleifen_verschachtelt {
-
 	public static void main(String[] args) {
-
-
 		// Teil A 3 Zeilen mit je 5 X
 		System.out.println("Teil A 3 Zeilen mit je 5 X");
 		for (int i = 1; i <= 3; i++) {
@@ -30,13 +26,5 @@ public class schleifen_verschachtelt {
 			System.out.println();
 			System.out.println();
 		}
-
-
-
-
-
 	}
-
-
-
 }
