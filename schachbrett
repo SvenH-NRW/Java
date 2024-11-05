@@ -1,0 +1,65 @@
+package Basis;
+
+public class schachbrett {
+
+
+	public static void main(String[] args) {
+
+
+
+		System.out.println("Teil C: Schachbrett");
+		char spalte = 'a';
+		for (int i = 8; i >=1; i--) {
+
+			for (int j = 1; j <= 8; j++) {
+				spalte = spalte_s(j);
+				System.out.print("["+spalte+i +"] ");
+			}
+
+			System.out.println();
+		}
+
+
+	}
+
+	public static char spalte_s(int j) {
+		char spalte_f = 'a';
+
+		switch (j){
+		case 1: {
+			spalte_f = 'a'; 
+			break;
+		}
+		case 2: {
+			spalte_f = 'b'; 
+			break;
+		}
+		case 3: {
+			spalte_f = 'c'; 
+			break;
+		}
+		case 4: {
+			spalte_f = 'd'; 
+			break;
+		}
+		case 5: {
+			spalte_f = 'e'; 
+			break;
+		}
+		case 6: {
+			spalte_f = 'f'; 
+			break;
+		}
+		case 7: {
+			spalte_f = 'g'; 
+			break;
+		}
+		case 8: {
+			spalte_f = 'h'; 
+			break;
+		}
+		}
+		return spalte_f;	
+	}
+
+}
