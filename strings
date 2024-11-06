@@ -40,13 +40,13 @@ c) (Forgeschrittenen Aufgabe)
 		System.out.println("p: " + index_p);
 
 		String Hello = "Hello World!";
-		String elloH = "";
+		String olleH = "";
 //		int hello_l =Hello.length();
 		for (int i=Hello.length()-1;i>=0;i--)
 		{
-			elloH = elloH + Hello.charAt(i);
+			olleH = olleH + Hello.charAt(i);
 		}
-		System.out.println(Hello + " != " + elloH);
+		System.out.println(Hello + " != " + olleH);
 
 
 
