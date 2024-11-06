@@ -1,0 +1,55 @@
+package Basis;
+
+public class strings {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/* 
+		 * a) Geben Sie für folgenden String aus, wie oft das Zeichen 'e', und das Zeichen 'C' vorkommt:
+Drei Chinesen mit dem Kontrabass saßen auf der Straße und erzählten sich was.
+Da kam die Polizei, fragt: Was ist denn das? Drei Chinesen mit dem Kontrabass.
+
+Output: e: ANZAHL C: ANZAHL
+
+b) Bringen Sie den String: "MISSISSIPPI" ins lower case Format und geben aus an welchem Index das erste 'p' vorkommt.
+
+c) (Forgeschrittenen Aufgabe)
+
+    Drehen Sie den String "Hello World!" um
+    Output: "!dlroW olleH"
+		 */
+
+
+		String china = "Drei Chinesen mit dem Kontrabass saßen auf der Straße und erzählten sich was. Da kam die Polizei, fragt: Was ist denn das? Drei Chinesen mit dem Kontrabass.";
+
+
+		int anz_e=0;
+		int anz_C=0;
+		for (int i=0;i<=china.length()-1;i++)
+		{
+			if (china.charAt(i) =='e') {anz_e++;}
+			else if (china.charAt(i) =='C') {anz_C++;}
+		}
+		System.out.println("e: " + anz_e + " C: "+ anz_C);
+
+		String MISS = "MISSISSIPPI";
+		String miss = MISS.toLowerCase();
+		System.out.println(miss);
+
+		int index_p = miss.indexOf('p');
+		System.out.println("p: " + index_p);
+
+		String Hello = "Hello World!";
+		String elloH = "";
+//		int hello_l =Hello.length();
+		for (int i=Hello.length()-1;i>=0;i--)
+		{
+			elloH = elloH + Hello.charAt(i);
+		}
+		System.out.println(Hello + " != " + elloH);
+
+
+
+	}
+
+}
