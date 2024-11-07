@@ -5,43 +5,50 @@ public class caesar {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+
 		// info a-z = asccii 97-122
 		// info A-Z = asccii 65-90
 
 		String text = "qwert";
 		String temp = text;
 
-		int code = 35;
+		int code = 99;
 		text = "";
 
-		while(code >26) {
+		while(code >26) 
+		{
 			code-=26;
 		}
-		while(code <0) {
+		while(code <0) 
+		{
 			code+=26;
 		}
 		for (int i=0;i<=temp.length()-1;i++)
 		{
 			if ((temp.charAt(i) < 65) || ((temp.charAt(i) > 90) &&(temp.charAt(i) < 97)) ||(temp.charAt(i) > 122)) 
-			{
-				System.out.println("ha");
+			{			// if kein Zeichen a-z oder A-Z
 				continue;}
 			else 
 			{
-				text += push(temp.charAt(i), code);
+				text += push(temp.charAt(i), code);			// Aufruf Verschiebe-Funktion mit Parameter Buchstabe und Verschiebung
 			}
 		}
+
 		System.out.println(temp);
 		System.out.println(text);
+
 	}
 
 
-	public static char push(char ins, int co1) {
-		int ret =ins;
-		ret = (int)ins + co1;
-		if ((ret>122) && (ins<=122)) {ret-=26;} 
-		if ((ret>90) && (ins<=90)) {ret-=26;} 
+	public static char push(char ins, int code1) 
+	{
+		int ret =ins+code1;
+		if ((ret>122) && (ins<=122)) {ret-=26;} 	// Überlaufsbehandlung a-z
+		if ((ret>90) && (ins<=90)) {ret-=26;} 		// Überlaufsbehandlung A-Z
 		char ret2 = (char) ret;
 		return ret2;
 	}
+
+
+
 }
