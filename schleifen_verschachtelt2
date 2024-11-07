@@ -1,0 +1,56 @@
+package Basis;
+
+public class schleifen3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("a: 3 Zeilen jeweils Ziffern 1-4");
+		
+		for(int i=3; i>=1 ;i--) 
+		{
+			for(int j=1;j<=4;j++) 
+			{
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+
+		System.out.println();
+		System.out.println();
+		System.out.println("b: 5 Zeilen mit weniger werdende Ziffern beginnend mit 1-5");
+		
+		for(int i=5; i>=1 ;i--) 
+		{
+			for(int j=1;j<=i;j++) 
+			{
+				System.out.print(j + " ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		System.out.println();
+		System.out.println("c: 5 Zeilen mit steigende Anzahl Zahlen mit steigenden Werten");
+		
+		int count =1;
+		for(int i=1; i<=5 ;i++) 
+		{
+			for(int j=1;j<=i;j++) 
+			{
+				if (count <10) 
+				{
+					System.out.print(" " +count + " ");
+					
+				}
+				else
+				{
+				System.out.print(count + " ");
+				}
+			count++;
+			}
+			System.out.println();
+		}
+	}
+
+}
