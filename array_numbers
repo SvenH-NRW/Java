@@ -1,0 +1,87 @@
+package Basis;
+
+public class array2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] numbers = {26,54,8,17,23,4,33};
+		int numbers_l = numbers.length;
+
+		System.out.println("Mittelwert des Arrays");
+		int numbers_sum = 0;
+		int numbers_anz = 0;
+		double numbers_avg = 0.0;
+
+		for(int j=0;j<=numbers.length-1;j++) 
+		{
+			numbers_sum += numbers[j];
+			numbers_anz ++;
+		}
+		numbers_avg = (double) numbers_sum / numbers_anz;
+		System.out.println(numbers_avg+" ist der average ");
+		System.out.println();
+		System.out.println();
+
+
+
+
+		int gesuchtesElement = 23;
+		boolean treffer = false;
+		int index_t = -1;
+		for(int j=0;j<=numbers.length-1;j++) 
+		{
+			if (numbers[j] == gesuchtesElement) {
+				index_t =j;
+				treffer = true;
+				break;
+			}
+		}
+		if (treffer) 
+		{
+			System.out.print(gesuchtesElement+ " ist an Index " + index_t);
+
+		}
+		else
+		{
+			System.out.print(gesuchtesElement + " ist nicht im Array");
+
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+
+
+
+		int index_del = 4;
+
+		int[] numbers4 = new int[numbers_l-1]; 
+		if (index_del <=(numbers_l-1)) 
+		{
+			for(int j=0;j<=numbers.length-2;j++) 
+			{
+				if (j >= index_del) 
+				{
+					numbers4[j]=numbers[j+1];
+				}
+				else
+				{
+					numbers4[j]=numbers[j];
+				}
+			}
+
+		}
+		else 
+		{
+			System.out.print(index_del + " ist außerhalb des Array's");
+		}
+
+
+
+		for (int i=0;i<=numbers4.length-1;i++)
+		{
+			System.out.print(numbers4[i] + " ");	
+		}
+	}
+
+}
