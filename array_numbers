@@ -24,6 +24,7 @@ public class array2 {
 
 
 
+		System.out.print("Element-Suche");
 
 		int gesuchtesElement = 23;
 		boolean treffer = false;
@@ -53,6 +54,7 @@ public class array2 {
 
 
 
+		System.out.print("Element-entfernen");
 		int index_del = 4;
 
 		int[] numbers4 = new int[numbers_l-1]; 
