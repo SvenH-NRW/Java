@@ -5,16 +5,21 @@ public class caesar {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-
 		// info a-z = asccii 97-122
 		// info A-Z = asccii 65-90
 
 		String text = "qwert";
 		String temp = text;
 
-		int code = 15;
+		int code = 35;
 		text = "";
 
+		while(code >26) {
+			code-=26;
+		}
+		while(code <0) {
+			code+=26;
+		}
 		for (int i=0;i<=temp.length()-1;i++)
 		{
 			if ((temp.charAt(i) < 65) || ((temp.charAt(i) > 90) &&(temp.charAt(i) < 97)) ||(temp.charAt(i) > 122)) 
@@ -26,10 +31,8 @@ public class caesar {
 				text += push(temp.charAt(i), code);
 			}
 		}
-
 		System.out.println(temp);
 		System.out.println(text);
-
 	}
 
 
@@ -41,7 +44,4 @@ public class caesar {
 		char ret2 = (char) ret;
 		return ret2;
 	}
-
-
-
 }
