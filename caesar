@@ -27,7 +27,9 @@ public class caesar {
 		{
 			if ((temp.charAt(i) < 65) || ((temp.charAt(i) > 90) &&(temp.charAt(i) < 97)) ||(temp.charAt(i) > 122)) 
 			{			// if kein Zeichen a-z oder A-Z
-				continue;}
+				text += temp.charAt(i);
+				continue;
+			}
 			else 
 			{
 				text += push(temp.charAt(i), code);			// Aufruf Verschiebe-Funktion mit Parameter Buchstabe und Verschiebung
