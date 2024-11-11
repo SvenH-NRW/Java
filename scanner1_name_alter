@@ -1,0 +1,19 @@
+package java_w2;
+import java.util.Scanner;
+public class scanner1 {
+	public static void main(String[] args) {
+		String name;
+		String vorname;
+		int alter;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Eingabe Vorname");
+		vorname = input.next();
+		System.out.println("Eingabe Name");
+		name = input.next();
+		System.out.println("Eingabe Alter");
+		alter = input.nextInt();
+		
+		System.out.println(vorname+ " " + name + " ist " + alter +" Jahre alt");
+	}
+
+}
