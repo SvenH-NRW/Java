@@ -1,0 +1,32 @@
+package java_w2;
+
+import java.util.Scanner;
+
+public class scanner2 {
+
+	public static void main(String[] args) {
+		int anzahl;
+		double preis;
+		double gegeben;
+		double ges_preis;
+		double rest; 
+		Scanner input = new Scanner(System.in);
+		System.out.println("Anzahl Artikel");
+		anzahl = input.nextInt();
+		System.out.println("Preis pro Artikel");
+		preis = input.nextDouble();
+		System.out.println("gegeben");
+		gegeben = input.nextDouble();
+		
+		System.out.println("Anzahl " + anzahl);
+		System.out.println("Preis " + preis);
+		System.out.println("gegeben " + gegeben);
+		
+		ges_preis = preis * anzahl;
+		rest = gegeben - ges_preis;
+		System.out.println("Gesamtpreis " + ges_preis);
+		System.out.println("Rückgeld " + rest);
+		
+	}
+
+}
