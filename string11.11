@@ -80,7 +80,7 @@ Bsp: str1 = "Leben" str2="Nebel" -> True!
 
 
 
-		System.out.println("4 Anagramm (ok, vergeigt und auf Wortpalindrome geprüft anstatt auf Schüttelworte");
+		System.out.println("4 Anagramm (ok, vergeigt und auf Wortpalindrome geprüft anstatt auf Schüttelworte)");
 		String string4_1 ="Leben";
 		String string4_2 ="Nebel";
 		String string4_1k =string4_1.toLowerCase();
