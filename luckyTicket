@@ -1,0 +1,67 @@
+package java_w2;
+import java.util.Random;
+import java.lang.Math;
+
+
+public class luckyTicket {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		luckyTicket value = new luckyTicket();
+		int ziffern = 4;
+		
+
+		int ticket = value.getticket(ziffern);
+//		int ticket = 23;
+		System.out.println("Ticket: " + ticket);
+		
+		boolean luck = value.luck(ticket, ziffern);
+		System.out.println("luck: " + luck);
+				
+	}
+
+	public boolean luck (int ticket ,int stellen) {
+		boolean luck = false;
+		int sum_l = 0;
+		int sum_r = 0;
+		
+		String ticket_s = ""+ ticket;
+		while (ticket_s.length()<stellen) 
+		{
+			ticket_s = "0" + ticket_s;
+		}
+		char[] ticket_c = ticket_s.toCharArray();
+		for (int i=0; i<stellen/2;i++) 
+		{
+			sum_l += ticket_c[i] - '0';
+		}
+		for (int i=stellen/2; i<stellen;i++) 
+		{
+			sum_r += ticket_c[i] - '0';
+		}
+//		System.out.println("Ticket:" + ticket);
+		System.out.println("sum_l:" + sum_l);
+		System.out.println("sum_r:" + sum_r);
+		
+		if (sum_l==sum_r) 
+		{
+			luck = true;
+		}
+		else 
+		{
+			luck = false;
+		}
+		
+		return luck;
+	}
+
+
+	public int getticket (int stellen) {
+
+		Random rand = new Random();
+		int wurf =0;
+		wurf += rand.nextInt((int)Math.pow(10, stellen))+1;
+		return wurf;
+
+	}
+}
