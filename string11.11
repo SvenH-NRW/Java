@@ -1,0 +1,115 @@
+package Basis;
+
+public class string2 {
+
+	/*1. Wandeln Sie den String "Dieses Java Programm funktioniert" in ein char Array um geben Sie über eine Schleife die Anzahl des Chars 'a' aus.
+2. Str = "Dies ist ein Beispiel"
+Geben Sie alle Worte innerhalb des Strings mit einer geraden Anzahl an Zeichen aus. 
+(Hinweis "\s" ist ein Leerzeichen)
+Output: Dies, Beispiel,
+3. Aus einem String von Zahlen sollen die Zeichen gelöscht werden bis zur ersten "richtigen Zahl" (1-9). 
+str = "00000000015704204" -> output = "15704204" (Datentyp String)
+4. (Fortgeschritten):
+Prüfen Sie, ob 2 Strings ein Anagramm sind. Geben Sie einen bool true aus wenn es des Fall ist.
+Bsp: str1 = "Leben" str2="Nebel" -> True!
+	 */
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("1 Umwandelung in Char");
+		String string1 = "Dieses Java Programm funktioniert";
+		char[] char1 = new char[string1.length()];
+		int count_a =0;
+		for(int i=0;i<=string1.length()-1;i++) 
+		{
+			char1[i] =string1.charAt(i);
+			if (char1[i]=='a') 
+			{count_a++;}
+		}
+		System.out.println(string1 + " enthält " + count_a + " 'a'");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+
+		System.out.println("2 Worte mit grader Anzahl Buchstuben");
+		String string2 = "Dies ist ein Beispiel";
+		String string2_1 = string2;
+		String string2_2 = string2;
+		int index1 = 0;
+
+
+		while (index1 != -1)
+		{
+			index1 = string2_1.indexOf(" ");
+			string2_2 = string2_1.substring(0, index1);
+			string2_1 = string2_1.substring(index1+1);
+			if ((string2_2.length()%2) ==0) 
+			{
+				System.out.println();
+				System.out.println("gerade " + string2_2 + "");
+			}
+			index1 = string2_1.indexOf(" ");
+			if ((index1 == -1)&&(string2_1.length()%2) ==0) 
+			{
+				System.out.println("gerade " + string2_1 + "");
+			}
+		}	
+
+
+		System.out.println();
+		System.out.println();
+		System.out.println("3 String kürzen");
+		String string3 ="00000000015704204";
+		String string3_t=string3;
+		for(int i=0;i<=string3.length()-1;i++) 
+		{
+			if (string3.charAt(i) == '0') 
+			{
+				string3_t = string3.substring(i+1);
+			}
+			else 
+			{
+				System.out.println(string3 + " = " + string3_t);
+				break;
+			}
+		}
+		System.out.println();
+		System.out.println();
+
+
+
+
+		System.out.println("4 Anagramm");
+		String string4_1 ="Leben";
+		String string4_2 ="Nebel";
+		String string4_1k =string4_1.toLowerCase();
+		String string4_2k =string4_2.toLowerCase();
+		boolean anagramm = true;
+
+		if (string4_1.length()==string4_2.length())
+		{
+			for(int i=0;i<=string4_1.length()-1;i++) 
+			{
+				if (string4_1k.charAt(i)!=string4_2k.charAt(string4_2k.length()-i-1))
+				{
+					System.out.println("kein Anagramm");
+					anagramm = false;
+				}
+			}
+		}
+		else 
+		{
+			System.out.println("nicht gleich lang, kann kein Anagramm sein");
+			anagramm = false;
+		}
+		if (anagramm)
+		{
+			System.out.println("ist ein Anagramm");
+
+		}
+
+
+
+	}
+}
