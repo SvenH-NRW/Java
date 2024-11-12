@@ -63,26 +63,17 @@ public class Rechner1 {
 
 				// Runden auf vorgegebene Nachkomma-Stellen
 				result = (double) Math.round(result*Math.pow(10, nachkomma))/Math.pow(10, nachkomma);
-//				System.out.println(result + " " + operator + " " + var2);
-				
 			}
 			System.out.println("Zwischenergebnis: " + output + " = " + result);
-
 
 		}while (operator_s.charAt(0) != '=');
 
 
-
-
 		// Ausgabe der Berechnung
 		if ((operator=='*')||(operator=='/')||(operator=='+')||(operator=='-')||(operator=='=')) 
-		{
-			System.out.println("Endergebnis: " + output + " " + result);
-		}
+		{	System.out.println("Endergebnis: " + output + " " + result);	}
 		else
-		{
-			System.out.println(" = "+ "keine gültige Eingabe");
-		}
+		{	System.out.println(" = "+ "keine gültige Eingabe");				}
 
 	}
 
