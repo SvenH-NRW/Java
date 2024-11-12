@@ -1,0 +1,75 @@
+package java_w2;
+
+import java.util.Arrays;
+
+public class array12_2 {
+
+	public static void main(String[] args) 
+	{
+		int[][] wetter = { {0,1, 2, 3, 4,5,6,7,8,9,10,11,12,13}, {12,14,10,7,11,13,12,15,15,18,16,13,10,12} ,{0,0,0,0,0,0,0,0,0,0,0,0,0,0} } ;
+		String[] tab1 = { "[Tag ][", "[Temp][" ,"[Diff][" };
+		int[] diff= {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		for (int i=0;i<wetter[0].length-1;i++) 
+		{
+			wetter[2][i]=wetter[1][i]-wetter[1][i+1];
+			diff[i]=wetter[2][i];
+		}
+
+		for (int j=0;j<3;j++) 
+		{
+			for (int i=-1;i<wetter[0].length;i++) 
+			{ 
+				if (i==-1)
+				{
+					System.out.print(tab1[j]);
+				}
+				else if (i!=wetter[j].length-1)
+				{
+					if ((wetter[j][i]<10)&&(wetter[j][i]>=0))
+					{
+						System.out.print(" ");
+					}
+					System.out.print(wetter[j][i]+"][");
+				}
+				else			
+				{
+					if ((wetter[j][i]<10)&&(wetter[j][i]>=0))
+					{
+						System.out.print(" ");
+					}
+					System.out.print(wetter[j][i]+"]");
+				} 
+			}
+			System.out.println();
+		}
+
+	}
+
+	public static void ausgabereihe (int j, int[][] wetter, String[] tab1) {
+		for (int i=-1;i<wetter[0].length;i++) 
+		{
+			if (i==-1)
+			{
+				System.out.print(tab1[j]);
+			}
+			else if (i!=wetter[j].length-1)
+			{
+				if (wetter[j][i]<10)
+				{
+					System.out.print(" ");
+				}
+				System.out.print(wetter[j][i]+"][");
+			}
+			else			
+			{
+				if (wetter[j][i]<10)
+				{
+					System.out.print(" ");
+				}
+				System.out.print(wetter[j][i]+"]");
+			} 
+		}
+		System.out.println();
+	}
+
+}
