@@ -1,0 +1,76 @@
+package java_w2;
+
+import java.util.Scanner;
+
+/*
+ * Erstellen Sie ein Java Programm, welches folgende Aufgabenstellung löst:
+ * Ein Spieler kann ich in einem zweidimensionalen Raum in alle Himmelsrichtungen 
+ * (Norden „N“, Süden „S“, Osten „O“ und Westen „W“) 
+ * bewegen. Entwickeln Sie einen Algorithmus, der für eine beliebe Bewegungseingabe 
+ * ausgibt, ob der Spieler wieder am Start steht.
+ * 
+ * Beispiel:
+ * "NOWS" -> True
+ * 
+ * Die Methode soll einen Boolean ausgeben und erhält einen String als Eingabe.
+ */
+
+public class Koordinaten {
+
+	public static void main(String[] args) 
+	{
+		Koordinaten nosw = new Koordinaten();
+
+		String input = nosw.input();
+		System.out.println("erkannte Eingabe: " + input);
+
+		input= input.toLowerCase();
+		boolean result = nosw.auswertung(input);
+		System.out.println("Ergebnis ist " + result);
+	}
+
+
+	public String input () 
+	{
+		System.out.println("Eingabe NOSW:");
+		Scanner ObjRead = new Scanner(System.in);  	
+		String str1 = ObjRead.nextLine();  			
+		return str1;
+	}
+	public boolean auswertung(String input) 
+	{	
+		int x =0;
+		int y= 0;
+		boolean result;
+		char[] input_c = input.toCharArray();
+	for (int i=0; i<input.length();i++) 
+	{
+		switch (input_c[i]) {
+		case 'n':
+			y++; 
+			break;
+		case 's':
+			y--; 
+			break;
+		case 'o':
+			x++; 
+			break;
+		case 'w':
+			x--; 
+			break;
+		default:
+			System.out.println("ungültige Eingabe: " + input_c[i]);
+		}
+	}
+	if ((x==0)&&(y==0)) 
+	{
+		result = true;
+	}
+	else 
+	{
+		result = false;
+	}
+		return result;
+	}
+
+}
