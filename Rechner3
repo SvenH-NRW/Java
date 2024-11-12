@@ -1,0 +1,145 @@
+package java_w2;
+
+import java.lang.Math;
+import java.util.Scanner;
+
+/*
+ * Aufgabe:
+ * Erstellen Sie eine Klasse die einen Taschenrechner simuliert.
+ * Operationen: 
+ * - Addieren
+ * - Suptrahieren
+ * - Multiplizieren 
+ * - Dividieren 
+ * als eigene Methoden erstellt werden. 
+ * 
+ * Zudem soll der Taschenrechner das aktuelle Zwischenergebnis darstellen können 
+ * oder das Zwischenergebnis zurück auf 0 setzen. 
+ * 
+ * Des weiteren soll auch die Zahl π als eine static "Methode" implementiert werden 
+ * (Hinweis "final").
+ */
+
+public class Rechner1 {
+
+	public static void main(String[] args) {
+		// Overhead-Variablen bzw Konstanten
+		double result;
+		Rechner1 calc = new Rechner1();
+		Scanner ObjRead = new Scanner(System.in);  			// Create a Scanner object
+
+		String operator_s = "++";
+		String output = "";
+
+		// Eingabe-Bereich
+		double var1 = 0;
+		double var2 = 0;
+		char operator = '+';
+		int nachkomma = 3;
+
+
+		System.out.println("Eingabe Wert 1:");
+		var1 = calc.in_val() ;
+		result = var1;
+		
+		output = "" + var1;
+		
+		do	{
+
+			System.out.println("Eingabe Operator + / - * ( = beendet die Rechnung) :");
+			operator_s = ObjRead.nextLine();  
+			operator = operator_s.charAt(0);
+			output += " " + operator;
+
+
+			if (operator != '=') 
+			{
+				System.out.println("Eingabe Wert 2:");
+				var2 = calc.in_val() ;
+				output += " " + var2;
+
+				// switch nach Operator
+				result = calc.calc(result,var2, operator) ;
+
+				// Runden auf vorgegebene Nachkomma-Stellen
+				result = (double) Math.round(result*Math.pow(10, nachkomma))/Math.pow(10, nachkomma);
+//				System.out.println(result + " " + operator + " " + var2);
+				
+			}
+			System.out.println("Zwischenergebnis: " + output + " = " + result);
+
+
+		}while (operator_s.charAt(0) != '=');
+
+
+
+
+		// Ausgabe der Berechnung
+		if ((operator=='*')||(operator=='/')||(operator=='+')||(operator=='-')||(operator=='=')) 
+		{
+			System.out.println("Endergebnis: " + output + " " + result);
+		}
+		else
+		{
+			System.out.println(" = "+ "keine gültige Eingabe");
+		}
+
+	}
+
+	public double in_val () 
+	{
+		double var1;
+		Scanner ObjRead = new Scanner(System.in);  			// Create a Scanner object
+		String str1 = ObjRead.nextLine();  				// Read user input
+		if ((str1.charAt(0) == 'p')&&(str1.charAt(1) == 'i')) 
+		{	 var1 = pi();					}
+		else 
+		{	var1 = Double.valueOf(str1);	}		
+		return var1;
+	}
+
+
+	public double calc (double var1, double var2, char operator) 
+	{
+		double result;
+		Rechner1 calc = new Rechner1();
+		switch (operator) 
+		{
+		case '*':	{	
+			result = calc.mul(var1,var2) ;
+			break;
+		}
+		case '+':	{	
+			result = calc.add(var1,var2) ;
+			break;
+		}
+		case '-':	{	
+			result = calc.sub(var1,var2) ;
+			break;
+		}
+		case '/':	{	
+			result = calc.div(var1,var2) ;
+			break;
+		}
+		default:	{
+			result = 0.0;	
+		}
+		}
+		return result;
+	}
+
+	public double mul (double var1, double var2) 
+	{	return var1*var2;	}
+
+	public double add (double var1, double var2) 
+	{	return var1+var2;	}
+
+	public double sub (double var1, double var2) 
+	{	return var1-var2;	}
+
+	public double div (double var1, double var2) 
+	{	return var1/var2;	}
+
+	public static double pi() 
+	{	return Math.PI;	}
+}
