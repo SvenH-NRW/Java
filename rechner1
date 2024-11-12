@@ -1,0 +1,129 @@
+package java_w2;
+
+import java.lang.Math;
+
+/*
+ * Aufgabe:
+ * Erstellen Sie eine Klasse die einen Taschenrechner simuliert.
+ * Operationen: 
+ * - Addieren
+ * - Suptrahieren
+ * - Multiplizieren 
+ * - Dividieren 
+ * als eigene Methoden erstellt werden. 
+ * 
+ * Zudem soll der Taschenrechner das aktuelle Zwischenergebnis darstellen können 
+ * oder das Zwischenergebnis zurück auf 0 setzen. 
+ * 
+ * Des weiteren soll auch die Zahl π als eine static "Methode" implementiert werden 
+ * (Hinweis "final").
+*/
+
+public class Rechner1 {
+
+	public static void main(String[] args) {
+		// Overhead-Variablen bzw Konstanten
+		double result;
+		final double pi = pi();
+		Rechner1 calc = new Rechner1();
+		
+		
+		// Eingabe-Bereich
+		double var1 = pi;
+		double var2 = pi;
+		char operator = '/';
+		int nachkomma = 3;
+		
+		
+		// switch nach Operator
+		result = calc.calc(var1,var2, operator) ;
+
+
+		// Runden auf vorgegebene Nachkomma-Stellen
+		result = (double) Math.round(result*Math.pow(10, nachkomma))/Math.pow(10, nachkomma);
+
+		// Ausgabe der Berechnung
+		if ((operator=='*')||(operator=='/')||(operator=='+')||(operator=='-')) 
+		{
+			System.out.println(var1 +" " + operator + " " +var2 +" = "+ result);
+		}
+		else
+		{
+			System.out.println(var1 +" " + operator + " " +var2 +" = "+ "keine gültige Eingabe");
+		}
+
+	}
+
+
+
+	public double calc (double var1, double var2, char operator) 
+	{
+		double result;
+		Rechner1 calc = new Rechner1();
+		switch (operator) 
+		{
+		case '*':
+		{	
+			result = calc.mul(var1,var2) ;
+			break;
+		}
+		case '+':
+		{	
+			result = calc.add(var1,var2) ;
+			break;
+		}
+		case '-':
+		{	
+			result = calc.sub(var1,var2) ;
+			break;
+		}
+		case '/':
+		{	
+			result = calc.div(var1,var2) ;
+			break;
+		}
+		default:
+		{
+			result = 0.0;	
+		}
+		}
+		return result;
+	}
+
+	public double mul (double var1, double var2) 
+	{
+
+		double result = var1*var2;
+		return result;
+	}
+
+	public double add (double var1, double var2) 
+	{
+
+		double result = var1+var2;
+		return result;
+	}
+
+	public double sub (double var1, double var2) 
+	{
+
+		double result = var1-var2;
+		return result;
+	}
+
+	public double div (double var1, double var2) 
+	{
+
+		double result = var1/var2;
+		return result;
+	}
+
+
+	public static double pi() 
+	{
+		double pi = Math.PI;
+		return pi;		
+	}
+
+
+}
