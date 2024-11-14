@@ -1,0 +1,87 @@
+Pseudocode:
+Merkmale von Pseudocode:
+
+1. Einfach und Klar.
+Einfach zu lesen und zu verstehen
+
+
+2. Keine strikte Syntax
+Der Fokus liegt auf der Strucktur und Logik des Programms.
+
+
+3.Hilfe zur planung
+Um ein Programm vor dem tatsächlichen start einer Programmiersprache zu planen.
+
+
+
+
+Begin
+        // Deklariere zwei Zahlen
+        set zahl1 TO 5
+        set zahl2 TO 10
+
+        //Adiere die beiden Zahlen
+        set ergebnis to zahl1 + zahl2 
+
+        //gib das Ergebnis aus
+        Output ergebnis
+end
+
+
+Java:
+public class Addition
+{
+        public static void main (String[] args) 
+    {
+            int zahl1 = 5;
+            int zahl2 = 10;
+
+            int ergebnis = zahl1 + zahl2;
+
+            System.out.println(ergebnis);
+    }
+}
+
+
+Zusammenfassung:
+
+Pseudocode wird verwendet, um eine klare, sprachunabhängige Darstellung der Logik und Strucktur eines Programms zu entwerfen. Ohne Rücksicht auf eine Syntax.
+
+
+
+Struktogramme:
+
+
+Merkmale von Struktogrammen:
+
+
+1. Einfachheit und Klarheit:
+
+Visuelle Darstellung der Logik.
+
+
+2. Einfache Symbole und Struckturen:
+
+Sehr einfach zu verstehen weil, wenige Symbole die sich auf Grundstruckturen von Algorithmen beziehen
+
+
+3.Hierachische Darstellung:
+
+Die Strucktur folgt einer Baumstrucktur, in einzelnen Schritten untereinander angeordnet.
+
+
+Grundlegende Bausteine:
+
+1. Lineare Abfolge: Eine einfache Reihe von Anweisungen.
+
+2.Bedingungen (If-Struktur): Eine  Verzweigung, die zwei oder mehr mögliche Abläufe zeigt.
+
+3.Schleife(For-oder While-Schleife): Eine Wiederholung einer oder mehrerer Anweisungen,solange eine bestimmte Bedingung erfüllt ist.
+
+
+
+
+
+
+
+
